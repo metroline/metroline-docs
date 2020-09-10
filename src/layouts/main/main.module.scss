@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.inner {
+  flex: 1;
+  @include default-section-padding;
+}
+
+.right-wrapper {
+  padding: 45px 0 0 65px;
+  @include lg-down {
+    padding: 45px 0 0;
+  }
+  @include sm-down {
+    padding-top: 0;
+  }
+}
+
+.left {
+  //overflow: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  //overflow: auto;
+}
+
+.right {
+  max-width: calc(100% - 334px);
+  @include sm-down {
+    max-width: 100%;
+  }
+}
