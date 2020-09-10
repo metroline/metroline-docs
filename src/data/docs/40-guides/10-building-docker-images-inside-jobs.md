@@ -1,3 +1,8 @@
+---
+title: 'Building Docker Images Inside Jobs'
+excerpt: ''
+---
+
 # Building Docker Images Inside Jobs
 
 If you distribute and deploy your apps with Docker, chances are you build them inside your CI (and if you don't, we really think you should, it makes your life a lot more simple).

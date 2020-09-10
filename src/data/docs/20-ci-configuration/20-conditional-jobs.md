@@ -1,3 +1,8 @@
+---
+title: 'Conditional jobs'
+excerpt: ''
+---
+
 # Conditional jobs
 
 Sometimes, you want to execute a job conditionally. You can use the `when` job property for this. 

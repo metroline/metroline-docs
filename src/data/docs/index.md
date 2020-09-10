@@ -1,6 +1,6 @@
 ---
 title: 'Metroline Docs'
-excerpt: ''
+excerpt: 'Metroline CI is a Continuous Integration and Delivery platform built with Docker, React, Node, MongoDB, Socket.io and D3.'
 isHomePage: true
 ---
 

@@ -33,7 +33,7 @@ const Seo = ({
     }
   `);
 
-  const currentTitle = title ? siteTitle + ' - ' + title : siteTitle;
+  const currentTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const currentDescription = excerpt || siteDescription;
   const currentUrl = slug ? `${siteUrl}/${slug}` : siteUrl;
   const currentImage = createMetaImagePath(image, siteUrl, siteImage);

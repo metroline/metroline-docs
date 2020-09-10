@@ -1,3 +1,8 @@
+---
+title: 'Private Docker registry'
+excerpt: ''
+---
+
 # Private Docker registry
 
 Say you want to use a private Docker image in your CI configuration:

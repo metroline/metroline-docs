@@ -1,3 +1,8 @@
+---
+title: 'Basic CI configuration'
+excerpt: ''
+---
+
 # Basic CI configuration
 
 Metroline expects your CI configuration inside a `.metroline.yml` file placed at the root of your projects.

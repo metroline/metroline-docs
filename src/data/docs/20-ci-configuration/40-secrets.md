@@ -1,3 +1,8 @@
+---
+title: 'Secrets'
+excerpt: ''
+---
+
 # Secrets
 
 Secrets can be defined at the repo level or globally. They are set as job environment variables and masked in logs. You can also inject them in your `.metroline.yml`.

@@ -1,3 +1,8 @@
+---
+title: 'Installation'
+excerpt: ''
+---
+
 # Installation
 
 To deploy, you'll need to:

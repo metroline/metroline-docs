@@ -1,3 +1,8 @@
+---
+title: 'Permissions'
+excerpt: ''
+---
+
 # Permissions
 
 Permissions are synchronized automatically every 30 minutes. You can change this by setting `METROLINE_SYNC_INTERVAL`.

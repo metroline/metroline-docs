@@ -1,3 +1,8 @@
+---
+title: 'Before and after scripts'
+excerpt: ''
+---
+
 # Before and after scripts
 
 To define scripts that run `before` and/or `after` the script of each jobs, you can use the `beforeScript` and `beforeScript` properties.
