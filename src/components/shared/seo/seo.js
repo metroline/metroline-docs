@@ -4,7 +4,7 @@ import {graphql, useStaticQuery} from 'gatsby';
 import {createMetaImagePath} from 'utils';
 
 const Seo = ({
-               data: {title, description, image, slug} = {},
+               data: {title, excerpt, image, slug} = {},
                facebook,
              } = {}) => {
   const {
@@ -34,7 +34,7 @@ const Seo = ({
   `);
 
   const currentTitle = title ? siteTitle + ' - ' + title : siteTitle;
-  const currentDescription = description || siteDescription;
+  const currentDescription = excerpt || siteDescription;
   const currentUrl = slug ? `${siteUrl}/${slug}` : siteUrl;
   const currentImage = createMetaImagePath(image, siteUrl, siteImage);
 

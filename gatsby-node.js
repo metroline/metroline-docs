@@ -28,7 +28,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
               html
               frontmatter {
                 title
-                description
+                excerpt
                 isHomePage
               }
             }
@@ -44,7 +44,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
   // first iteration, build our tree
   data.allFile.nodes.forEach(({name, relativeDirectory, children}) => {
     const {
-      frontmatter: {title, isHomePage},
+      frontmatter: {title, isHomePage, excerpt},
     } = children[0];
     // build a proper path
 
@@ -58,6 +58,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
     addNode(unorderify(relativeDirectory), unorderify(name), {
       path: isHomePage ? '/' : entryPath,
       title,
+      excerpt,
     });
   });
 
@@ -119,8 +120,8 @@ exports.onCreateNode = ({node, actions}) => {
   if (node.frontmatter) {
     createNodeField({
       node,
-      name: 'description',
-      value: node.frontmatter.description || '',
+      name: 'excerpt',
+      value: node.frontmatter.excerpt || '',
     });
   }
 };

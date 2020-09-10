@@ -9,12 +9,12 @@ const chunk = require('chunk-text');
 const flatten = arr =>
   arr.flatMap(({relativeDirectory, name, children: [entry]}, i) => {
     const {
-      description,
+      excerpt,
       objectID,
       frontmatter: {title},
     } = entry;
     console.log('processing file #', i, title);
-    const chunks = chunk(description, 300); // 300 chunk size that approximately equals 1 paragraph
+    const chunks = chunk(excerpt, 300); // 300 chunk size that approximately equals 1 paragraph
 
     // perform the exact operations we perform in gatsby-node
     // during page generation
@@ -46,7 +46,7 @@ const docPagesQuery = `{
         frontmatter {
           title
         }
-        description(pruneLength: 100000)
+        excerpt(pruneLength: 100000)
       }
     }
   }

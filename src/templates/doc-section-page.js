@@ -8,7 +8,7 @@ import contentStyles from 'components/pages/doc-page/content/content.module.scss
 export default function ({
                            pageContext: {
                              title,
-                             description,
+                             excerpt,
                              slug,
                              content,
                              sidebarTree,
@@ -18,7 +18,7 @@ export default function ({
                          }) {
   return (
     <LayoutMain
-      seoMetadata={{title, content: description, slug}}
+      seoMetadata={{title, content: excerpt, slug}}
       sidebar={sidebarTree}
     >
       <Breadcrumbs breadcrumbs={breadcrumbs}/>

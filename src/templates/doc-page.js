@@ -14,7 +14,7 @@ export default function (props) {
   const pageMetadata = {
     data: {
       title: frontmatter.title,
-      description: frontmatter.description,
+      excerpt: frontmatter.excerpt,
       slug: frontmatter.slug,
     },
   };

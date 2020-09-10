@@ -13,7 +13,7 @@ export const docPageHit = clickHandler => ({hit}) => (
       attribute={'content'}
       hit={hit}
       tagName={'mark'}
-      className={styles.description}
+      className={styles.excerpt}
     />
   </Link>
 );
