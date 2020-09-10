@@ -4,6 +4,7 @@ import Content from 'components/pages/doc-page/content';
 import SectionContentTable from 'components/pages/doc-page/section-content-table';
 import Breadcrumbs from 'components/shared/breadcrumbs';
 import contentStyles from 'components/pages/doc-page/content/content.module.scss';
+import useAnalytics from '../hooks/use-analytics';
 
 export default function ({
                            pageContext: {
@@ -16,6 +17,8 @@ export default function ({
                              breadcrumbs,
                            },
                          }) {
+  useAnalytics(slug);
+
   return (
     <LayoutMain
       seoMetadata={{title, content: excerpt, slug}}

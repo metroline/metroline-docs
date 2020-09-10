@@ -70,3 +70,41 @@ Your content here.
 
 </div>
 ```
+
+## Ackee
+
+[Ackee](https://github.com/electerious/Ackee) is a privacy-friendly, self-hosted tracking tool. To use it:
+
+```dotenv
+GATSBY_ACKEE_SERVER=http://localhost:3000
+GATSBY_ACKEE_DOMAIN_ID=...
+```
+
+if you've changed `ACKEE_TRACKER` in your Ackee server:
+
+```dotenv
+GATSBY_ACKEE_TRACKER=custom-name
+```
+
+To disable detailed tracking:
+
+```dotenv
+GATSBY_ACKEE_DETAILED=false
+```
+
+To also send tracking info for localhost:
+
+```dotenv
+GATSBY_ACKEE_IGNORE_LOCALHOST=false
+```
+
+## Algolia
+
+You can find this info in your Algolia account under **API keys**.
+
+```dotenv
+ALGOLIA_ADMIN_KEY=
+GATSBY_ALGOLIA_APP_ID=
+GATSBY_ALGOLIA_INDEX_NAME=
+GATSBY_ALGOLIA_SEARCH_ONLY_KEY=
+```
