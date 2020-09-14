@@ -16,7 +16,7 @@ excerpt: ''
 
 Enable debug using the popular [debug](https://www.npmjs.com/package/debug) Npm package. To limit logs to Metroline, use `DEBUG=metroline.runner*`.
 
-## METROLINE_JWT_SECRET
+## METROLINE\_JWT\_SECRET
 
 **Default**: none
 
@@ -26,7 +26,7 @@ Enable debug using the popular [debug](https://www.npmjs.com/package/debug) Npm 
 
 Secret used to sign and verify JWT tokens. Can be generated with `openssl rand 32 -hex`.
 
-## METROLINE_JWT_TOKEN_EXPIRATION
+## METROLINE\_JWT\_TOKEN\_EXPIRATION
 
 **Default**: 259200 (30 days)
 
@@ -36,7 +36,7 @@ Secret used to sign and verify JWT tokens. Can be generated with `openssl rand 3
 
 Expiration time (in seconds) of JWT tokens.
 
-## METROLINE_UI_URL
+## METROLINE\_UI\_URL
 
 **Default**: none
 
@@ -46,7 +46,7 @@ Expiration time (in seconds) of JWT tokens.
 
 URL of the Metroline UI.
 
-## METROLINE_MONGO_URI
+## METROLINE\_MONGO\_URI
 
 **Default**: none
 
@@ -56,7 +56,7 @@ URL of the Metroline UI.
 
 URI of a MongoDB instance.
 
-## METROLINE_GITLAB_URL
+## METROLINE\_GITLAB\_URL
 
 **Default**: https://gitlab.com
 
@@ -66,7 +66,7 @@ URI of a MongoDB instance.
 
 URL of your Gitlab instance
 
-## METROLINE_GITLAB_CLIENT_ID
+## METROLINE\_GITLAB\_CLIENT\_ID
 
 **Default**: none
 
@@ -76,7 +76,7 @@ URL of your Gitlab instance
 
 Gitlab application ID (see [here](https://docs.gitlab.com/ee/integration/oauth_provider.html#adding-an-application-through-the-profile)).
 
-## METROLINE_GITLAB_CLIENT_SECRET
+## METROLINE\_GITLAB\_CLIENT\_SECRET
 
 **Default**: none
 
@@ -86,7 +86,7 @@ Gitlab application ID (see [here](https://docs.gitlab.com/ee/integration/oauth_p
 
 Gitlab application secret (see [here](https://docs.gitlab.com/ee/integration/oauth_provider.html#adding-an-application-through-the-profile)).
 
-## METROLINE_GITLAB_WEBHOOK_SSL_VERIFY
+## METROLINE\_GITLAB\_WEBHOOK_SSL\_VERIFY
 
 **Default**: true
 
@@ -96,7 +96,7 @@ Gitlab application secret (see [here](https://docs.gitlab.com/ee/integration/oau
 
 Whether to enable [Gitlab webhook SSL verification](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#ssl-verification) for hooks created by Metroline.
 
-## METROLINE_GITEA_URL
+## METROLINE\_GITEA\_URL
 
 **Default**: none
 
@@ -106,7 +106,7 @@ Whether to enable [Gitlab webhook SSL verification](https://docs.gitlab.com/ee/u
 
 URL of your Gitea instance
 
-## METROLINE_GITEA_CLIENT_ID
+## METROLINE\_GITEA\_CLIENT\_ID
 
 **Default**: none
 
@@ -116,7 +116,7 @@ URL of your Gitea instance
 
 Client ID of an OAuth app registered in your Gitea instance.
 
-## METROLINE_GITEA_CLIENT_SECRET
+## METROLINE\_GITEA\_CLIENT\_SECRET
 
 **Default**: none
 
@@ -126,7 +126,7 @@ Client ID of an OAuth app registered in your Gitea instance.
 
 Client secret of an OAuth app registered in your Gitea instance.
 
-## METROLINE_GITHUB_URL
+## METROLINE\_GITHUB\_URL
 
 **Default**: https://github.com
 
@@ -136,7 +136,7 @@ Client secret of an OAuth app registered in your Gitea instance.
 
 URL of your Github instance.
 
-## METROLINE_GITHUB_CLIENT_ID
+## METROLINE\_GITHUB\_CLIENT\_ID
 
 **Default**: none
 
@@ -146,7 +146,7 @@ URL of your Github instance.
 
 Client ID of a Github OAuth app.
 
-## METROLINE_GITHUB_CLIENT_SECRET
+## METROLINE\_GITHUB\_CLIENT\_SECRET
 
 **Default**: none
 
@@ -156,7 +156,7 @@ Client ID of a Github OAuth app.
 
 Client secret of a Github OAuth app.
 
-## METROLINE_GITHUB_WEBHOOK_SSL_VERIFY
+## METROLINE\_GITHUB\_WEBHOOK\_SSL\_VERIFY
 
 **Default**: true
 
@@ -166,7 +166,7 @@ Client secret of a Github OAuth app.
 
 Whether your Github instance should verify the SSL certificate of Metroline when calling webhooks.
 
-## METROLINE_PORT
+## METROLINE\_PORT
 
 **Default**: 3000 (local development) / 80 (Dockerfile)
 
@@ -176,7 +176,7 @@ Whether your Github instance should verify the SSL certificate of Metroline when
 
 Port on which metroline is listening.
 
-## METROLINE_HOST
+## METROLINE\_HOST
 
 **Default**: none
 
@@ -186,7 +186,7 @@ Port on which metroline is listening.
 
 Host of your metroline server. For example `metroline.company.com:3000`. You can include host and port, but it should not contain protocol as this is handled internally. This value is used for providing correct redirect URL when doing OAuth flows and should 
 
-## METROLINE_WEBHOOK_HOST
+## METROLINE\_WEBHOOK\_HOST
 
 **Default**: METROLINE_HOST
 
@@ -196,7 +196,7 @@ Host of your metroline server. For example `metroline.company.com:3000`. You can
 
 Host used for building the webhook URL when setting up a repository. This is useful when you are working locally as you've probably set [`METROLINE_HOST`](#metroline_host) to `localhost`. When your Git server calls webhooks, `localhost` will point to itself. The solution is to set `METROLINE_WEBHOOK_HOST` to `host.docker.internal` (OS X) or to your IP.
 
-## METROLINE_MIGRATE_ROLLBACK
+## METROLINE\_MIGRATE\_ROLLBACK
 
 **Default**: false
 
@@ -206,7 +206,7 @@ Host used for building the webhook URL when setting up a repository. This is use
 
 Forces the server to rollback the last migration, then exit. Use this when you're trying to [downgrade](#/docs/core/upgrade-and-downgrade).
 
-## METROLINE_JOB_TIMEOUT
+## METROLINE\_JOB\_TIMEOUT
 
 **Default**: 86400
 
@@ -216,7 +216,7 @@ Forces the server to rollback the last migration, then exit. Use this when you'r
 
 How much time (in seconds) a job has to complete. The server automatically cancels jobs that haven't completed within this amount of time.
 
-## METROLINE_RUNNER_SECRET
+## METROLINE\_RUNNER\_SECRET
 
 **Default**: none
 
@@ -226,7 +226,7 @@ How much time (in seconds) a job has to complete. The server automatically cance
 
 Secret that should be sent by runners to authenticate.
 
-## METROLINE_GLOBAL_SECRETS
+## METROLINE\_GLOBAL\_SECRETS
 
 **Default**: none
 
@@ -254,7 +254,7 @@ Each object of the array should have the following properties:
 | value | string | true | Global secret value. |
 | protectedBranchesOnly | boolean | false | Whether this secret should be available on protected branches. |
 
-## METROLINE_MAX_JOBS_PER_PIPELINE
+## METROLINE\_MAX\_JOBS\_PER\_PIPELINE
 
 **Default**: 100
 
@@ -264,7 +264,7 @@ Each object of the array should have the following properties:
 
 Maximum number of jobs per pipeline. Indirectly, this determines the maximum numbr of job entries in your `.metroline.yml`.
 
-## METROLINE_SYNC_INTERVAL
+## METROLINE\_SYNC\_INTERVAL
 
 **Default**: 1800 (30 minutes)
 
@@ -274,7 +274,7 @@ Maximum number of jobs per pipeline. Indirectly, this determines the maximum num
 
 How often (in seconds) user repositories should be synchronized.
 
-## METROLINE_CLEAN_JOBS_INTERVAL
+## METROLINE\_CLEAN\_JOBS\_INTERVAL
 
 **Default**: 5
 
@@ -284,7 +284,7 @@ How often (in seconds) user repositories should be synchronized.
 
 How often (in seconds) we should check for jobs that need to be cancelled due to a timeout.
 
-## METROLINE_ORGS
+## METROLINE\_ORGS
 
 **Default**: none
 
@@ -302,7 +302,7 @@ METROLINE_ORGS=octocat
 
 </div>
 
-## METROLINE_SSL_KEY
+## METROLINE\_SSL\_KEY
 
 **Default**: none
 
@@ -312,7 +312,7 @@ METROLINE_ORGS=octocat
 
 An SSL private key in PEM format. See [SSL](#/core/ssl).
 
-## METROLINE_SSL_CERT
+## METROLINE\_SSL\_CERT
 
 **Default**: none
 
@@ -322,7 +322,7 @@ An SSL private key in PEM format. See [SSL](#/core/ssl).
 
 An SSL certificate in PEM format. See [SSL](#/core/ssl).
 
-## METROLINE_REQUIRE_LOGIN_FOR_PUBLIC_REPOS
+## METROLINE\_REQUIRE\_LOGIN\_FOR\_PUBLIC\_REPOS
 
 **Default**: true
 
@@ -332,7 +332,7 @@ An SSL certificate in PEM format. See [SSL](#/core/ssl).
 
 When set to false, public repositories of your Git server will also be public in Metroline. This grants guests read-only access to pipelines, jobs and logs.
 
-## METROLINE_REFRESH_TOKEN_TASK_PERIOD
+## METROLINE\_REFRESH\_TOKEN\_TASK\_PERIOD
 
 **Default**: 10
 
@@ -342,7 +342,7 @@ When set to false, public repositories of your Git server will also be public in
 
 How often (in seconds) to check for tokens that need to be refreshed.
 
-## METROLINE_COOKIE_SAMESITE
+## METROLINE\_COOKIE\_SAMESITE
 
 **Default**: null
 
@@ -352,7 +352,7 @@ How often (in seconds) to check for tokens that need to be refreshed.
 
 Allows you to set the [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) property for cookies defined by the server. Useful when your Metroline server has a different host or URL than your UI.
 
-## METROLINE_COOKIE_SECURE
+## METROLINE\_COOKIE\_SECURE
 
 **Default**: false
 
@@ -362,7 +362,7 @@ Allows you to set the [SameSite](https://developer.mozilla.org/en-US/docs/Web/HT
 
 Allows you to set the [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) property for cookies defined by the server. Some browsers, like Chrome, require it to be `true` to use cookies for cross site requests (which implies you need a secure backend). 
 
-## METROLINE_COMMIT_MESSAGE_SKIP_MARKER
+## METROLINE\_COMMIT\_MESSAGE\_SKIP\_MARKER
 
 **Default**: [skip ci],[ci skip]
 

@@ -60,23 +60,23 @@ Variables defined in the global `env` will be overridden by those defined in the
 
 Metroline provides a number of predefined environment variables.
 
-### METROLINE_PIPELINE_ID
+### METROLINE\_PIPELINE\_ID
 Pipeline ID
 
-### METROLINE_COMMIT_SHA
+### METROLINE\_COMMIT\_SHA
 Commit sha
 
-### METROLINE_COMMIT_BRANCH
+### METROLINE\_COMMIT\_BRANCH
 Commit branch
 
-### METROLINE_COMMIT_URL
+### METROLINE\_COMMIT\_URL
 Commit url
 
-### METROLINE_REPO_ID
+### METROLINE\_REPO\_ID
 Id of the git repository in your git server
 
-### METROLINE_REPO_URL_SSH
+### METROLINE\_REPO_URL\_SSH
 SSH url to clone the git repository
 
-### METROLINE_UPSTREAM_STATUS
+### METROLINE\_UPSTREAM\_STATUS
 Status of the jobs **upstream** of the current job. This includes **only** the current job's dependency tree up to the pipeline root.
