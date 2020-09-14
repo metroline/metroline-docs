@@ -12,9 +12,9 @@ const {
 // main doc page template
 const docPageTemplate = path.resolve(`src/templates/doc-page.js`);
 
-async function createDocPages({actions: {createPage}, graphql, reporter}) {
+async function createDocPages({ actions: { createPage }, graphql, reporter }) {
   // doc pages query
-  const {data} = await graphql(`
+  const { data } = await graphql(`
     query docPagesQuery {
       allFile(
         filter: { ext: { eq: ".md" }, relativeDirectory: { regex: "/docs/" } }
@@ -28,6 +28,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
               html
               frontmatter {
                 title
+                sidebarTitle
                 excerpt
                 isHomePage
               }
@@ -39,19 +40,19 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
   `);
 
   // Tree-structure handlers
-  const {getTreePart, addNode} = buildFileTree(buildFileTreeNode);
+  const { getTreePart, addNode } = buildFileTree(buildFileTreeNode);
 
   // first iteration, build our tree
-  data.allFile.nodes.forEach(({name, relativeDirectory, children}) => {
+  data.allFile.nodes.forEach(({ name, relativeDirectory, children }) => {
     const {
-      frontmatter: {title, isHomePage, excerpt},
+      frontmatter: { title, isHomePage, excerpt, sidebarTitle },
     } = children[0];
     // build a proper path
 
     const entryPath = compose(
       slugify,
       unorderify,
-      stripDocRoot
+      stripDocRoot,
     )(`/${relativeDirectory}/${title || name}`);
 
     // populate our tree representation with actual nodes
@@ -59,23 +60,24 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
       path: isHomePage ? '/' : entryPath,
       title,
       excerpt,
+      sidebarTitle,
     });
   });
 
   // second iteration, create actual doc pages
   data.allFile.nodes.forEach(
-    ({name, relativeDirectory, children, children: [remarkNode]}) => {
+    ({ name, relativeDirectory, children, children: [remarkNode] }) => {
       // for debuggin purpose in case there are errors in md/html syntax
       if (typeof remarkNode === 'undefined') {
         console.log('remarkNode is', remarkNode);
         console.log('children is', children);
         console.log(
           '\nmarkup is broken! check the following file: \n\n',
-          `${relativeDirectory}/${name}`
+          `${relativeDirectory}/${name}`,
         );
         return;
       }
-      const {title, isHomePage} = remarkNode.frontmatter;
+      const { title, isHomePage } = remarkNode.frontmatter;
 
       // build a proper path
       const entryPath = isHomePage
@@ -83,7 +85,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
         : compose(
           slugify,
           unorderify,
-          stripDocRoot
+          stripDocRoot,
         )(`/${relativeDirectory}/${title || name}`);
       const extendedRemarkNode = {
         ...remarkNode,
@@ -93,7 +95,7 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
           // injection of a link to an article in git repo
           fileOrigin: encodeURI(
             process.env.GATSBY_GITHUB_DOCS_URL +
-            `/${relativeDirectory}/${name}.md`
+            `/${relativeDirectory}/${name}.md`,
           ),
         },
       };
@@ -110,12 +112,12 @@ async function createDocPages({actions: {createPage}, graphql, reporter}) {
           breadcrumbs,
         },
       });
-    }
+    },
   );
 }
 
-exports.onCreateNode = ({node, actions}) => {
-  const {createNodeField} = actions;
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
   // Adding default values for some fields and moving them under node.fields
   if (node.frontmatter) {
     createNodeField({

@@ -1,0 +1,3 @@
+---
+sidebarTitle: 'CI configuration'
+---

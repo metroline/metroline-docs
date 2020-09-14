@@ -1,5 +1,6 @@
 ---
 title: 'Server Environment Reference'
+sidebarTitle: 'Server'
 excerpt: ''
 ---
 

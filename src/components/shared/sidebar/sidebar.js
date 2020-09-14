@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import classNames from 'classnames/bind';
 import styles from './sidebar.module.scss';
 import Search from 'components/shared/search';
-import {Link, navigate, withPrefix} from 'gatsby';
+import { Link, navigate, withPrefix } from 'gatsby';
 import AlgoliaQueries from 'utils/algolia';
 import _startCase from 'lodash/startCase';
 
@@ -13,7 +13,7 @@ const indexName = AlgoliaQueries[0].indexName;
 //
 // algolia indices
 const searchIndices = [
-  {name: indexName, title: 'Doc Pages', hitComp: 'docPageHit'},
+  { name: indexName, title: 'Doc Pages', hitComp: 'docPageHit' },
 ];
 
 const cx = classNames.bind(styles);
@@ -28,7 +28,11 @@ const doesPathnameMatch = path => {
 // renders sidebar nodes from passed children prop, recursively
 const SidebarNode = ({
                        node: {
-                         meta: {path, title},
+                         meta: {
+                           path,
+                           title,
+                           sidebarTitle,
+                         },
                          name,
                        },
                      }) => {
@@ -46,7 +50,7 @@ const SidebarNode = ({
           to={path}
           className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
         >
-          {title || _startCase(name)}
+          {sidebarTitle || title || _startCase(name)}
         </Link>
       ) : (
         <span className={styles.title}>{title || name}</span>
@@ -58,7 +62,7 @@ const SidebarNode = ({
 // renders options from the passed children array, recursively
 const OptionsGroup = ({
                         node: {
-                          meta: {path, title},
+                          meta: { path, title },
                           name,
                         },
                       }) => {
@@ -75,10 +79,7 @@ const OptionsGroup = ({
   );
 };
 
-const Sidebar = ({sidebar, slug}) => {
-  const isActivePath = children =>
-    Object.values(children).some(({meta: {path}}) => slug === path);
-
+const Sidebar = ({ sidebar, slug }) => {
   const selectMenu = useRef();
 
   const navigateMobile = () => navigate(selectMenu.current.value);
@@ -92,9 +93,9 @@ const Sidebar = ({sidebar, slug}) => {
           <nav className={styles.nav}>
             {Object
               .values(sidebar)
-              .filter(({children}) => Object.keys(children).length !== 0)
+              .filter(({ children }) => Object.keys(children).length !== 0)
               .map(
-                ({meta: {title}, name, children}, i) => (
+                ({ meta: { sidebarTitle, title }, name, children }, i) => (
                   <div
                     key={name}
                     className={cx('section', {
@@ -102,7 +103,7 @@ const Sidebar = ({sidebar, slug}) => {
                     })}
                   >
                     <div className={styles.title}>
-                      {title || name}
+                      {sidebarTitle || title || name}
                     </div>
                     <div
                       className={cx('dropdown', {
@@ -114,7 +115,7 @@ const Sidebar = ({sidebar, slug}) => {
                       ))}
                     </div>
                   </div>
-                )
+                ),
               )}
           </nav>
         )}
@@ -130,15 +131,15 @@ const Sidebar = ({sidebar, slug}) => {
               className={styles.select}
             >
               {Object.values(sidebar).map(
-                ({meta: {title, path}, name, children}, i) => {
+                ({ meta: { sidebarTitle, title }, name, children }, i) => {
                   return (
-                    <optgroup label={title || name} key={name}>
+                    <optgroup label={sidebarTitle || title || name} key={name}>
                       {Object.values(children).map(node => (
                         <OptionsGroup node={node} key={node.name}/>
                       ))}
                     </optgroup>
                   );
-                }
+                },
               )}
             </select>
           </div>
