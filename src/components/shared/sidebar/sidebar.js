@@ -27,15 +27,15 @@ const doesPathnameMatch = path => {
 
 // renders sidebar nodes from passed children prop, recursively
 const SidebarNode = ({
-                       node: {
-                         meta: {
-                           path,
-                           title,
-                           sidebarTitle,
-                         },
-                         name,
-                       },
-                     }) => {
+  node: {
+    meta: {
+      path,
+      title,
+      sidebarTitle,
+    },
+    name,
+  },
+}) => {
   const [isActive, setIsActive] = useState(false);
   const isLink = !!path;
 
@@ -61,19 +61,13 @@ const SidebarNode = ({
 
 // renders options from the passed children array, recursively
 const OptionsGroup = ({
-                        node: {
-                          meta: { path, title },
-                          name,
-                        },
-                      }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    setIsActive(doesPathnameMatch(path));
-  }, []);
-
+  node: {
+    meta: { path, title },
+    name,
+  },
+}) => {
   return (
-    <option label={title || name} value={path} selected={isActive}>
+    <option label={title || name} value={path}>
       {title || name}
     </option>
   );
@@ -82,7 +76,12 @@ const OptionsGroup = ({
 const Sidebar = ({ sidebar, slug }) => {
   const selectMenu = useRef();
 
-  const navigateMobile = () => navigate(selectMenu.current.value);
+  const [val, setVal] = useState(slug);
+
+  const navigateMobile = () => {
+    setVal(selectMenu.current.value);
+    navigate(selectMenu.current.value);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -129,6 +128,7 @@ const Sidebar = ({ sidebar, slug }) => {
               ref={selectMenu}
               onChange={() => navigateMobile()}
               className={styles.select}
+              value={val}
             >
               {Object.values(sidebar).map(
                 ({ meta: { sidebarTitle, title }, name, children }, i) => {
