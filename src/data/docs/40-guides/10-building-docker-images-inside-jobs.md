@@ -40,6 +40,12 @@ command exited with code 1
 
 This problem occurs because your job doesn't have a Docker socket at hand. To provide it with one, restart your runner with the [METROLINE_JOB_DOCKER_SOCK](/docs/environment-reference/runner#metroline_job_docker_sock) environment variable set:
 
+<div class="blockquote" data-props='{ "mod": "danger" }'>
+
+Exposing Docker sockets is a major security breach. An attacker can make a pull request to execute commands like `docker ps` and `docker inspect` (by updating your CI config file or writing tests that execute commands) and view all environment variables given to the containers running on your runner's host. It can then find runner secrets and bootsrap it's own runner and start executing jobs and stealing secrets from your repositories. For now, you can use Dockerhub's [automated builds](https://docs.docker.com/docker-hub/builds/) feature. We will be working on ways to do this more saefly in the future.
+
+</div>
+
 <div class="code-group" data-props='{ "lineNumbers": ["true"] }'>
 
 ```dotenv
