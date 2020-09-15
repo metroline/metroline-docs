@@ -6,7 +6,7 @@ import Seo from 'components/shared/seo';
 import styles from './main.module.scss';
 import Header from '../../components/shared/header';
 
-const Main = ({children, pageMetadata, sidebar = false}) => (
+const Main = ({ children, pageMetadata, sidebar = false }) => (
   <>
     <Seo {...pageMetadata} />
     <div className={styles.wrapper}>

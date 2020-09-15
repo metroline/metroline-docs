@@ -1,12 +1,11 @@
 import React from 'react';
-import {default as LayoutMain} from 'layouts/main';
+import { default as LayoutMain } from 'layouts/main';
 import Content from 'components/pages/doc-page/content';
-import useAnalytics from '../hooks/use-analytics';
 
-export default function (props) {
+export default function DocPage(props) {
   const {
     pageContext: {
-      remarkNode: {html, frontmatter},
+      remarkNode: { html, frontmatter },
       sidebarTree,
       breadcrumbs,
     },
@@ -19,8 +18,6 @@ export default function (props) {
       slug: frontmatter.slug,
     },
   };
-
-  useAnalytics(frontmatter.slug);
 
   return (
     <LayoutMain pageMetadata={pageMetadata} sidebar={sidebarTree}>

@@ -6,6 +6,7 @@ import Search from 'components/shared/search';
 import { Link, navigate, withPrefix } from 'gatsby';
 import AlgoliaQueries from 'utils/algolia';
 import _startCase from 'lodash/startCase';
+import { useAckee } from '../../../hooks/use-analytics';
 
 const indexName = AlgoliaQueries[0].indexName;
 
@@ -18,11 +19,13 @@ const searchIndices = [
 
 const cx = classNames.bind(styles);
 
+function withoutEndSlash(str) {
+  return str.replace(/\/$/, '');
+}
+
 const doesPathnameMatch = path => {
   const maybePrefixedPath = withPrefix(path);
-  const doesPathMatchLocation = maybePrefixedPath === window.location.pathname;
-
-  return doesPathMatchLocation;
+  return withoutEndSlash(maybePrefixedPath) === withoutEndSlash(window.location.pathname);
 };
 
 // renders sidebar nodes from passed children prop, recursively
@@ -38,10 +41,11 @@ const SidebarNode = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const isLink = !!path;
+  const ackee = useAckee();
 
   useEffect(() => {
     setIsActive(doesPathnameMatch(path));
-  }, []);
+  }, [path]);
 
   return (
     <>
@@ -49,6 +53,7 @@ const SidebarNode = ({
         <Link
           to={path}
           className={`${styles.link} ${isActive ? styles.linkActive : ''}`}
+          onClick={() => ackee(path)}
         >
           {sidebarTitle || title || _startCase(name)}
         </Link>
@@ -75,12 +80,13 @@ const OptionsGroup = ({
 
 const Sidebar = ({ sidebar, slug }) => {
   const selectMenu = useRef();
-
-  const [val, setVal] = useState(slug);
+  const ackee = useAckee();
+  const [selectedPath, setSelectedPath] = useState(slug);
 
   const navigateMobile = () => {
-    setVal(selectMenu.current.value);
+    setSelectedPath(selectMenu.current.value);
     navigate(selectMenu.current.value);
+    ackee(selectMenu.current.value);
   };
 
   return (
@@ -128,7 +134,7 @@ const Sidebar = ({ sidebar, slug }) => {
               ref={selectMenu}
               onChange={() => navigateMobile()}
               className={styles.select}
-              value={val}
+              value={selectedPath}
             >
               {Object.values(sidebar).map(
                 ({ meta: { sidebarTitle, title }, name, children }, i) => {
