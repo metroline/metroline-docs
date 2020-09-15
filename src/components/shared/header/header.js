@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Media from 'react-media';
 import HeaderMobile from 'components/shared/header-mobile';
 import GithubLogo from 'images/github.svg';
@@ -15,7 +15,7 @@ export default function Header() {
         <div className={styles.inner}>
           <HeaderLogo/>
           <Media
-            query="(max-width: 991.98px)"
+            query="(max-width: 767.98px)"
             onChange={matches =>
               matches ? setIsMobileOrTablet(true) : setIsMobileOrTablet(false)
             }

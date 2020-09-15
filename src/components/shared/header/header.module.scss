@@ -1,7 +1,6 @@
 .wrapper {
   position: relative;
   z-index: 1;
-  @include default-section-padding;
   will-change: transform;
   border-bottom: 1px solid $color-additional-1;
   height: $header-height;
@@ -23,9 +22,6 @@
   right: 0;
   justify-content: flex-end;
   will-change: transform;
-  @include md-down {
-    display: none;
-  }
 }
 
 .link {

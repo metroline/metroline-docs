@@ -5,10 +5,12 @@ import Sidebar from 'components/shared/sidebar';
 import Seo from 'components/shared/seo';
 import styles from './main.module.scss';
 import Header from '../../components/shared/header';
+import Favicon from '../../components/shared/seo/Favicon';
 
 const Main = ({ children, pageMetadata, sidebar = false }) => (
   <>
     <Seo {...pageMetadata} />
+    <Favicon/>
     <div className={styles.wrapper}>
       <main className={styles.inner}>
         <Header/>
@@ -19,7 +21,7 @@ const Main = ({ children, pageMetadata, sidebar = false }) => (
                 <Sidebar sidebar={sidebar} slug={pageMetadata.data.slug}/>
               )}
             </div>
-            <div className={`column ${styles.right}`}>
+            <div className={`column ${styles.right} py-6`}>
               <div className={styles.rightWrapper}>{children}</div>
             </div>
           </div>

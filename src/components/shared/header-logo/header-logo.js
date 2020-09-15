@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../images/metroline.svg';
+import Logo from '../../../images/metroline-logo.svg';
 import styles from './header-logo.module.scss';
 
 export default function HeaderLogo() {

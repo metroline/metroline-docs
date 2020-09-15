@@ -6,15 +6,16 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  border-right: 1px solid $color-additional-1;
+
   @include md-down {
     padding-top: 30px;
   }
   @include sm-down {
     padding: 30px 0 0;
     width: 100%;
+    border-right: 0;
   }
-
-  border-right: 1px solid $color-additional-1;
 }
 
 .nav {

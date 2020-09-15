@@ -10,9 +10,9 @@
 }
 
 .right-wrapper {
-  padding: 45px 0 0 65px;
+  padding: 0 0 0 65px;
   @include lg-down {
-    padding: 45px 0 0;
+    padding: 0 0 0;
   }
   @include sm-down {
     padding-top: 0;
@@ -26,6 +26,7 @@
 
 .right {
   max-width: calc(100% - 334px);
+  padding: $padding__section--desktop 0;
   @include sm-down {
     max-width: 100%;
   }

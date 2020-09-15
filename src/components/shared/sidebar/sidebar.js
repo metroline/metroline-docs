@@ -93,7 +93,7 @@ const Sidebar = ({ sidebar, slug }) => {
     <div className={styles.wrapper}>
       <Search collapse indices={searchIndices}/>
       <Media
-        query="(min-width: 768px)"
+        query="(min-width: 767.98px)"
         render={() => (
           <nav className={styles.nav}>
             {Object
