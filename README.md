@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Metroline Docs" src="./branding/logo.svg" width="60" />
-  </a>
+  <img alt="Metroline Docs" src="https://raw.githubusercontent.com/metroline/metroline-brand/master/metroline-logo.svg" width="100" />
 </p>
 <h1 align="center">
   Metroline Docs
