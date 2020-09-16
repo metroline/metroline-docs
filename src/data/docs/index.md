@@ -10,6 +10,6 @@ Metroline CI is a Continuous Integration and Delivery platform built with Docker
 
 > Found a security issue ? Please [let us know](https://github.com/metroline/metroline/security/advisories/new) !
 
-- [Installation](/core/installation.md)
-- [Basics](/ci-configuration/basics.md)
+- [Installation](/core/installation)
+- [Basics](/ci-configuration/basics)
 
