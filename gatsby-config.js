@@ -51,7 +51,7 @@ const plugins = [
           options: {
             elements: [`h1`, `h2`, `h3`, `h4`, `h5`],
             icon: '<span class="anchor-handle">#</span>',
-            className: 'header-link'
+            className: 'header-link',
           },
         },
         {
@@ -123,7 +123,7 @@ module.exports = {
     siteDescription:
       'Documentation of Metroline, a Continuous Integration and Delivery platform build with Docker, Node, React, Socket.io and D3.',
     // pathPrefix: "",
-    siteImage: '/images/social-preview.jpg',
+    siteImage: '/images/social-preview.png',
     siteLanguage: 'en',
     siteUrl: process.env.GATSBY_SITE_URL,
     /* author */
