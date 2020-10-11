@@ -14,7 +14,7 @@ excerpt: ''
 
 **Description**:
 
-Enable debug using the popular [debug](https://www.npmjs.com/package/debug) Npm package. To limit logs to Metroline, use `DEBUG=metroline.runner*`.
+Enable debug using the popular [debug](https://www.npmjs.com/package/debug) Npm package. To limit logs to Metroline, use `DEBUG=metroline.server*`.
 
 ## METROLINE\_JWT\_SECRET
 
