@@ -86,7 +86,7 @@ Gitlab application ID (see [here](https://docs.gitlab.com/ee/integration/oauth_p
 
 Gitlab application secret (see [here](https://docs.gitlab.com/ee/integration/oauth_provider.html#adding-an-application-through-the-profile)).
 
-## METROLINE\_GITLAB\_WEBHOOK_SSL\_VERIFY
+## METROLINE\_GITLAB\_WEBHOOK\_SSL\_VERIFY
 
 **Default**: true
 
