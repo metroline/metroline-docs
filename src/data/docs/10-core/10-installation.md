@@ -37,9 +37,9 @@ services:
     environment:
       METROLINE_HOST: http://10.0.1.23:3001
       METROLINE_UI_URL: http://10.0.1.23:3000
-      # Generated with "openssl rand 32 -hex"
+      # Generated with "openssl rand -hex 32"
       METROLINE_JWT_SECRET: 896933b3545913aac9175890882c2ca3d861f6109dfe2c48f1b4c15686c59542
-      # Generated with "openssl rand 32 -hex"
+      # Generated with "openssl rand -hex 32"
       METROLINE_RUNNER_SECRET: 1f1b3c989bd7514797f5bc8da6a6dd8ac6acd08c3719acf47aa2a7f4aa1a7e57
       METROLINE_MONGO_URI: mongodb://mongo:27017/metroline
 
