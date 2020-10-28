@@ -27,7 +27,7 @@ services:
     ports:
       - "3000:80"
     environment:
-      METROLINE_SERVER_URL: http://10.0.1.23:3001
+      METROLINE_SERVER_URL: http://localhost:3001
 
   server:
     image: metroline/server:latest
@@ -35,8 +35,8 @@ services:
     ports:
       - "3001:80"
     environment:
-      METROLINE_HOST: http://10.0.1.23:3001
-      METROLINE_UI_URL: http://10.0.1.23:3000
+      METROLINE_HOST: http://localhost:3001
+      METROLINE_UI_URL: http://localhost:3000
       # Generated with "openssl rand -hex 32"
       METROLINE_JWT_SECRET: 896933b3545913aac9175890882c2ca3d861f6109dfe2c48f1b4c15686c59542
       # Generated with "openssl rand -hex 32"
