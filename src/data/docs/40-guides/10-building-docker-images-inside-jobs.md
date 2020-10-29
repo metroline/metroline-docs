@@ -38,7 +38,7 @@ command exited with code 1
 
 </div>
 
-This problem occurs because your job doesn't have a Docker socket at hand. To provide it with one, restart your runner with the [METROLINE_JOB_DOCKER_SOCK](/docs/environment-reference/runner#metroline_job_docker_sock) environment variable set:
+This problem occurs because your job doesn't have a Docker socket at hand. To provide it with one, restart your runner with the [METROLINE\_JOB\_DOCKER\_SOCK](/docs/runner-environment-reference#metroline_job_docker_sock) environment variable set:
 
 <div class="blockquote" data-props='{ "mod": "danger" }'>
 
