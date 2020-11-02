@@ -51,8 +51,8 @@ Note that if you define multiple secrets with the same name, the last value will
 <div class="code-group" data-props='{ "lineNumbers": ["true"] }'>
 
 ```yaml
-docker:
-  auth: {{DOCKER_AUTH_JSON}}
+jobs:
+  test: '{{DOCKER_AUTH_JSON}}'
 ```
 
 </div>

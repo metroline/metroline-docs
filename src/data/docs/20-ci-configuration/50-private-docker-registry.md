@@ -25,14 +25,14 @@ Add a secret with the content of a Docker JSON config file. For example, we'll n
 <div class="code-group" data-props='{ "lineNumbers": ["true"] }'>
 
 ```json
-{
-  "auths": {
-    "docker.company.com": {
-      "auth": "<your-token>"
-    }
-  }
-}
+{"auths": {"docker.company.com": {"auth": "<your-token>"}}}
 ```
+
+</div>
+
+<div class="blockquote" data-props='{ "mod": "warning" }'>
+
+Make sure to convert the content of your Docker auth file to a single line to avoid [YAML format issues](https://github.com/metroline/metroline/issues/4).
 
 </div>
 
@@ -43,7 +43,7 @@ Now, use the secret to set the `docker.auth` property in your config:
 ```yaml
 version: '1'
 docker:
-  auth: {{DOCKER_AUTH_JSON}}
+  auth: '{{DOCKER_AUTH_JSON}}'
 jobs:
   test:
     image: docker.company.com/my-image
