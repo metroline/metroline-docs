@@ -1,12 +1,12 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import {graphql, useStaticQuery} from 'gatsby';
-import {createMetaImagePath} from 'utils';
+import { Helmet } from 'react-helmet';
+import { graphql, useStaticQuery } from 'gatsby';
+import { createMetaImagePath } from 'utils';
 
 const Seo = ({
-               data: {title, excerpt, image, slug} = {},
-               facebook,
-             } = {}) => {
+  data: { title, excerpt, image, slug } = {},
+  facebook,
+} = {}) => {
   const {
     site: {
       siteMetadata: {
@@ -58,6 +58,7 @@ const Seo = ({
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary"/>
       <meta name="twitter:creator" content={authorTwitterAccount}/>
+      <script async src="https://analytics.charlie-bravo.be/ackee.js" data-ackee-server="https://analytics.charlie-bravo.be" data-ackee-domain-id="21dfa67a-6ba3-42e3-9c5b-af7255f5f411"></script>
     </Helmet>
   );
 };
