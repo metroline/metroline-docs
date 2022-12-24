@@ -234,7 +234,7 @@ Secret that should be sent by runners to authenticate.
 
 **Description**:
 
-An array of global secrets, formatted as a one line JSON string. See [global secrets](/docs/ci-configuration/secrets.md#global-secrets). 
+An array of global secrets, formatted as a one line JSON string. See [global secrets](/docs/ci-configuration/secrets#global-secrets). 
 
 For example:
 
