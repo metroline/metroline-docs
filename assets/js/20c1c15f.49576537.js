@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmetroline_docs_2=self.webpackChunkmetroline_docs_2||[]).push([[1069],{4314:e=>{e.exports=JSON.parse('{"permalink":"/metroline-docs/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

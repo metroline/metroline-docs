@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmetroline_docs_2=self.webpackChunkmetroline_docs_2||[]).push([[4740],{2561:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/metroline-docs/blog/tags/docusaurus","allTagsPath":"/metroline-docs/blog/tags","count":4}')}}]);
