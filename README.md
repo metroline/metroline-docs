@@ -5,7 +5,7 @@
   Metroline Docs
 </h1>
 
-This repository contains the sources of  [https://docs.metroline.io](https://docs.metroline.io). Feel free to improve it !
+This repository contains the sources of [https://metroline.github.io/metroline-docs/](https://metroline.github.io/metroline-docs/). Feel free to improve it !
 
 ## Get started
 
