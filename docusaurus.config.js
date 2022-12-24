@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Metroline Docs',
   tagline: 'Metroline is an Open Source Continuous Integration and Delivery (CICD) platform built with Docker, Node, React, MongoDB, Socket.io, D3 and Typescript.',
-  url: 'https://metroline.netlify.app',
-  baseUrl: '/',
+  url: 'https://metroline.github.io',
+  baseUrl: '/metroline-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'favicon.ico',
